@@ -1,7 +1,7 @@
 import React from 'react'
 import Task from './Task'
 
-function TodoList({setTodo, todo, filtertodo, setTask})
+function TodoList({setTodo, todo, filtertodo, setTask, edit, setEdit})
 {
    
     return(
@@ -15,7 +15,8 @@ function TodoList({setTodo, todo, filtertodo, setTask})
                     item = {items}
                     todo = {todo}
                     setTodo = {setTodo}
-                    setTask = {setTask}>
+                    setTask = {setTask}
+                     setEdit = {setEdit}>
                     </Task>)
                 })}
             </ul>
