@@ -1,23 +1,15 @@
 import React from 'react'
 
-function Task({text, item,todo, setTodo, setTask})
+function Task({text, item,todo, setTodo, setTask, setEdit})
 {
     const deleteHandler = () => {
         setTodo(todo.filter((el) => el.id !== item.id))
     }
     const edit = () => {
         document.getElementById("entertask").value = item.text;
+        setEdit(item.id);
     }
-   const changeTask = () => { 
-        setTodo(todo.map(el => {
-            if(el.id === item.id)
-            {
-                return {...el, text: document.getElementById("entertask").value}
-            }
-            return el
-        }))
-        setTask("");
-    }
+  
     const done = () => {
         setTodo(todo.map((el) => {
             if(el.id === item.id)
@@ -36,7 +28,6 @@ function Task({text, item,todo, setTodo, setTask})
             <div><button onClick={edit}>EDIT</button></div>
             <div><button onClick={deleteHandler}>DELETE</button></div>
             <div><button onClick={done}>DONE</button></div>
-            <div><button onClick={changeTask}>CHANGE</button></div>
         </div>
     )
 }
