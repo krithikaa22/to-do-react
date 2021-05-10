@@ -22,7 +22,6 @@ function Form({todo, setTask, setTodo, task, setStatus,  setFilter, edit, setEdi
         }
         else{
             setTodo([...todo, {text: task, id: todo.length, completed: false}]);
-            setFilter([...todo, {state: false}]);
         }
         setTask("");
     };
